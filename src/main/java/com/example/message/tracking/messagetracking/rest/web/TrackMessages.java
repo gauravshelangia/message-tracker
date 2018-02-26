@@ -40,8 +40,10 @@ public class TrackMessages {
     System.out.println("Below is the sout detail of message " + id + "  " + messageId);
     File file = new File("src/main/resources/static/image.png");
     InputStream inputStream = null;
+    byte[] imageArray = null;
     try {
       inputStream = new FileInputStream(file);
+      imageArray = IOUtils.toByteArray(inputStream);
     } catch (FileNotFoundException e) {
       e.printStackTrace();
     }
@@ -52,6 +54,6 @@ public class TrackMessages {
         e.printStackTrace();
       }
     }
-    return IOUtils.toByteArray(inputStream);
+    return imageArray;
   }
 }
