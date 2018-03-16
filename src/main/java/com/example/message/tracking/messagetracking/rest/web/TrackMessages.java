@@ -35,7 +35,7 @@ public class TrackMessages {
 
   @GetMapping(value = "/email",
       produces = MediaType.APPLICATION_JSON_VALUE)
-  public void isMessageOpened(String id, String messageId) throws IOException {
+  public byte[] isMessageOpened(String id, String messageId) throws IOException {
     logger.error("Below is the details {} , {}", id, messageId);
     System.out.println("Below is the sout detail of message " + id + "  " + messageId);
     File file = new File("src/main/resources/static/image.png");
@@ -54,6 +54,6 @@ public class TrackMessages {
         e.printStackTrace();
       }
     }
-//     return imageArray;
+    return imageArray;
   }
 }
